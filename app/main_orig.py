@@ -5,7 +5,6 @@ import bottle
 
 from api import ping_response, start_response, move_response, end_response
 
-from AI import movefunc
 
 @bottle.route('/')
 def index():
@@ -61,7 +60,10 @@ def move():
     """
     print(json.dumps(data))
 
-    return move_response(movefunc(data))
+    directions = ['up', 'down', 'left', 'right']
+    direction = random.choice(directions)
+
+    return move_response(direction)
 
 
 @bottle.post('/end')

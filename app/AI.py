@@ -1,2 +1,2 @@
 def movefunc(data):
-  return 'right'
+  return 'left'
